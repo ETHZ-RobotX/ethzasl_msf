@@ -189,7 +189,7 @@ void PositionSensorHandler<MEASUREMENT_TYPE, MANAGER_TYPE>::MeasurementCallback(
 
   // Fixed covariance will be set in measurement class -> MakeFromSensorReadingImpl.
   pointwCov->point = msg->pose.pose.position;
-  
+
   ProcessPositionMeasurement(pointwCov);
   }
 

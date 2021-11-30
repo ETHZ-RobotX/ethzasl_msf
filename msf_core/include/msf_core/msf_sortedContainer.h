@@ -307,7 +307,7 @@ class SortedContainer {
       return;  //there is no state older than time
     iterator_T it = GetIteratorClosest(newest - age);
     if (it->second->time > stateList.begin()->second->time)
-      stateList.erase(stateList.begin(), it);  
+      stateList.erase(stateList.begin(), it);
   }
 
   /**

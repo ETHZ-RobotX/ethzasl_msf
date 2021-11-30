@@ -255,7 +255,7 @@ void PoseSensorHandler<MEASUREMENT_TYPE, MANAGER_TYPE>::MeasurementCallback(
   } else{ // Fixed covariances
     pose->pose.pose = msg->pose.pose;
   }
-  
+
   ProcessPoseMeasurement(pose);
   }
 
