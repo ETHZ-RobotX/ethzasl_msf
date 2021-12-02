@@ -15,3 +15,7 @@ http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml
 
 ## License
 The source code is released under the Apache 2.0 license
+
+### Building
+
+[![Build Status](https://ci.leggedrobotics.com/buildStatus/icon?job=github_leggedrobotics/ethzasl_msf/master)](https://ci.leggedrobotics.com/job/github_leggedrobotics/job/ethzasl_msf/job/master/)
