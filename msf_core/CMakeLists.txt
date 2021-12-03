@@ -49,9 +49,6 @@ catkin_package(
     CFG_EXTRAS export_flags.cmake
 )
 
-install(DIRECTORY cmake
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-
 add_library(${PROJECT_NAME} src/lib/msf_tools.cc src/lib/falsecolor.cc 
                      src/lib/gps_conversion.cc)
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
@@ -59,6 +56,22 @@ add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_gencfg) # ${MSF_DOCUMENTATION})
 
 add_library(similaritytransform src/similaritytransform.cc)
 target_link_libraries(similaritytransform ${catkin_LIBRARIES})
+
+install(
+  TARGETS ${PROJECT_NAME} similaritytransform
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(
+  DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+)
+
+install(DIRECTORY cmake
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
 catkin_add_gtest(test_similaritytransform src/test/test_similaritytransform.cc)
 target_link_libraries(test_similaritytransform similaritytransform)
