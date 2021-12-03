@@ -58,7 +58,7 @@ add_library(similaritytransform src/similaritytransform.cc)
 target_link_libraries(similaritytransform ${catkin_LIBRARIES})
 
 install(
-  TARGETS ${PROJECT_NAME}
+  TARGETS ${PROJECT_NAME} similaritytransform
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
